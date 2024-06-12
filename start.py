@@ -41,7 +41,7 @@ class PersonalPrimer:
 
         #we pass the main object to all handlers so that they can access it through pp. or self.pp
         await asyncio.gather(
-            self.folio.load_exercise(),
+                self.folio.load_exercise(),
             button_handler.handle_button(self),
             recorder_handler.handle_recorder(self),
             mikroserver_handler.handle_mikroserver(self),

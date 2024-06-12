@@ -119,11 +119,14 @@ class EInkDisplay:
         self.display.frame_buf.paste(self.title, [0,750])
 
     async def display_body(self, content,emoji=False):
+        print(f'displayin {content}')
         cache_id = f"{self.font}::{content}"
         if cache_id in self.cache['body']:
             self.body=self.cache['body'][cache_id]
         else:
+            print(f'displayin {content}')
             self.body=create_text_image(content,600,600,font_path=self.font_path+self.font,font_size=self.min_font_size,outline=self.outline)
+            self.body.save('/tmp/buffer.bmp')
             self.cache['body'][cache_id]=self.body
         self.display.frame_buf.paste(self.body, [0,200])
 

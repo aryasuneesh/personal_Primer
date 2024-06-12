@@ -4,7 +4,6 @@ from Primer.Exercise import Exercise
 from PIL import Image,ImageDraw,ImageFont
 import sys
 
-
 class Folio(Exercise):
     def __init__(self, pp):
         self.pp = pp
@@ -83,6 +82,7 @@ class Folio(Exercise):
                 await self.activate_current_folio()
             else:
                 await self.pp.queue['display'].put({'b':'das Ende'})
+                # False and anything would always be False : why is this code here?
                 if False and self.pp.config['EPD']['front'] and 'front' in self.current_folio and self.current_folio['front']:
                     if 'waveshare_epd' not in sys.modules:
                         from waveshare_epd import epd5in65f

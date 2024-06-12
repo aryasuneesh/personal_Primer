@@ -21,13 +21,14 @@ class QuoteDisplayer():
         # Load quotes from JSON file
         with open(self.json_path, 'r') as file:
             quotes = json.load(file)
-
+        
         # Pick a random quote to display
         quote = random.choice(quotes)
         print(quote)
         text = f'"{quote["quote"]}"\n\n- {quote["author_of_quote"]}'
-
+        
         # Display the quote on the e-ink screen
         #await self.display.display_folio({'b':text})
         await self.display.display_body(text)
         self.display.display.draw_partial(constants.DisplayModes.DU)
+

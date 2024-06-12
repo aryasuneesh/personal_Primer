@@ -11,3 +11,4 @@ if __name__ == "__main__":
     json_path = f'{root_dir}/assets/quotes.json'
     quote_displayer = QuoteDisplayer(config_path, json_path)
     asyncio.run(quote_displayer.display_quote())
+

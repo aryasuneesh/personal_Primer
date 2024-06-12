@@ -23,6 +23,8 @@ def draw_outline(draw, position, text, font, outline_width, outline_color):
                 draw.text((x + dx, y + dy), text, font=font, fill=outline_color)
 
 def create_text_image(text, image_width, image_height, font_path, font_size=70, outline=False):
+    print(font_path)
+    print(text)
     font = ImageFont.truetype(font_path, font_size)
     if not text:
         text = " "
