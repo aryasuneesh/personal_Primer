@@ -33,8 +33,8 @@ class ColorQuoteDisplayer:
         draw = ImageDraw.Draw(image)
 
         # Load font
-        font_size = 70
-        font = ImageFont.truetype(self.font_path, font_size)
+        #font_size = 24
+        #font = ImageFont.truetype(self.font_path, font_size)
         
 
         # Format the text
